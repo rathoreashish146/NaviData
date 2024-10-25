@@ -1,85 +1,71 @@
-# NaviData: Natural Language Database Explorer
+# Mirror: A Natural Language Interface for Data Exploration and Analysis
 
-A modern data exploration platform that lets you query and analyze data using natural language. Built with GPT-4, this tool transforms plain English questions into SQL queries and generates insightful visualizations.
+Welcome to **Mirror**, an open-source platform designed to simplify data querying, summarization, and visualization by leveraging large language models (LLMs). Mirror offers a natural language interface for database interaction, making data exploration accessible to both technical and non-technical users. 
 
-## ✨ Key Features
+## Overview
 
-- **Natural Language to SQL**: Ask questions in plain English, get SQL queries
-- **Interactive Visualizations**: Auto-generates relevant charts and graphs
-- **Data Summarization**: Get natural language summaries of query results
-- **Query Verification**: Review and edit generated SQL before execution
-- **Multi-DB Support**: Works with popular SQL databases and CSV files
+**Mirror** is a versatile tool that enables users to interact with data through an intuitive natural language interface. Users can enter queries in plain language, which are then converted into SQL commands by a pretrained language model. The platform also offers visualizations for easier data interpretation, along with options to preview and refine generated SQL commands to suit specific needs.
 
-## 🚀 Getting Started
+## Key Features
 
-```bash
-# Install dependencies
-npm install
+- **Natural Language Querying**: Query your databases using everyday language.
+- **Automated SQL Generation**: Translates queries into executable SQL statements.
+- **Editable SQL Preview**: View and adjust SQL commands before execution.
+- **Data Visualization**: Automatically generates visualizations for query results.
+- **Human-in-the-Loop**: Allows users to edit and refine SQL for greater control and accuracy.
+- **Plug-and-Play Design**: Easily adaptable to various databases without training on additional datasets.
 
-# Configure environment variables
-cp .env.example .env
-# Add your GPT-4 API key to .env
+## System Requirements
 
-# Start the application
-npm start
-```
+- **Backend**: Node.js (for database connectivity and API handling)
+- **Databases Supported**: Major relational databases, along with CSV files (handled by SQLite)
+- **APIs**: Codex API for SQL generation, GPT-3 for summarization, Vega for visualizations
 
-## 🔧 Configuration
+## Getting Started
 
-```env
-OPENAI_API_KEY=your_api_key_here
-DATABASE_URL=your_database_connection_string
-PORT=3000
-```
+### Installation
 
-## 💡 Usage Example
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/mirror-data/mirror.git
+   ```
+2. **Install Dependencies**
+   ```bash
+   cd mirror
+   npm install
+   ```
+3. **Configure Environment Variables**
+   Update your `.env` file with the API keys required for OpenAI Codex and GPT-3.
 
-Simply type your question:
-```
-"What were our top 5 selling products last month?"
-```
+4. **Run the Server**
+   ```bash
+   npm start
+   ```
 
-NaviData will:
-1. Generate appropriate SQL
-2. Execute the query
-3. Create visualizations
-4. Provide a natural language summary
+### Usage
 
-## 🛠️ Built With
+1. **Initialize Database Connection**: Connect to your database or CSV file through the Mirror interface.
+2. **Input Queries**: Type in your query in natural language.
+3. **SQL Generation & Editing**: Mirror will auto-generate SQL based on your query, with options for manual editing.
+4. **Visualization**: Automatically generated visuals can be customized and exported for reporting.
 
-- Frontend: React + Tailwind CSS
-- Backend: Node.js + Express
-- LLM: GPT-4 API
-- Visualization: D3.js/Vega
-- Database: SQL/SQLite support
+## Components and Workflow
 
-## 🔒 Security Features
+1. **Data Query**: Mirror constructs prompts with metadata and queries, which Codex then converts to SQL. Users may preview and edit these SQL commands as needed.
+2. **Summarization**: Mirror uses GPT-3 to generate natural language summaries, helping users quickly understand data results.
+3. **Visualization**: Automatically generates visuals (e.g., bar charts, line graphs) using Vega to make data insights more accessible.
 
-- Read-only database connections
-- Input validation and sanitization
-- Rate limiting for API calls
+## Example Use Cases
 
-## 📦 Project Structure
+1. **Sports Data Question-Answering**: Mirror can connect to real-time sports databases, enabling fans to ask questions and receive current statistics and updates.
+2. **OSS Insight**: Integration with open-source event analysis to monitor software development trends.
 
-```
-navidata/
-├── client/          # React frontend
-├── server/          # Node.js backend
-├── config/          # Configuration files
-└── utils/           # Helper functions
-```
+## Contributing
 
-## 🤝 Contributing
+We welcome contributions! If you're interested in improving Mirror, please refer to the `CONTRIBUTING.md` for guidelines.
 
-Contributions welcome! Please:
-1. Fork the repository
-2. Create a feature branch
-3. Submit a Pull Request
+## License
 
-## 📄 License
+This project is licensed under the MIT License. See `LICENSE` for more details.
 
-MIT License - feel free to use for personal or commercial projects.
-
-## 🙏 Acknowledgments
-
-Based on the research paper "Mirror: A Natural Language Interface for Data Querying, Summarization, and Visualization" (WWW '23) by Canwen Xu, Julian McAuley, and Penghan Wang.
+For more information, visit our [GitHub repository](https://github.com/mirror-data/mirror).
