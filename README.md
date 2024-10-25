@@ -1,71 +1,70 @@
-# Mirror: A Natural Language Interface for Data Exploration and Analysis
+# Navidata
 
-Welcome to **Mirror**, an open-source platform designed to simplify data querying, summarization, and visualization by leveraging large language models (LLMs). Mirror offers a natural language interface for database interaction, making data exploration accessible to both technical and non-technical users. 
+Navidata is an open-source platform for intuitive data exploration and analysis, leveraging the power of large language models (LLMs). It offers a seamless natural language interface to interact with databases, automatically generating and executing SQL queries based on user input. Navidata also provides visualizations and summarizations of data, making it accessible to both technical users and non-technical professionals.
 
-## Overview
+## Table of Contents
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [System Components](#system-components)
+- [Use Cases](#use-cases)
+- [References](#references)
 
-**Mirror** is a versatile tool that enables users to interact with data through an intuitive natural language interface. Users can enter queries in plain language, which are then converted into SQL commands by a pretrained language model. The platform also offers visualizations for easier data interpretation, along with options to preview and refine generated SQL commands to suit specific needs.
+---
 
-## Key Features
+## Features
 
-- **Natural Language Querying**: Query your databases using everyday language.
-- **Automated SQL Generation**: Translates queries into executable SQL statements.
-- **Editable SQL Preview**: View and adjust SQL commands before execution.
-- **Data Visualization**: Automatically generates visualizations for query results.
-- **Human-in-the-Loop**: Allows users to edit and refine SQL for greater control and accuracy.
-- **Plug-and-Play Design**: Easily adaptable to various databases without training on additional datasets.
+- **Natural Language Querying**: Easily query databases with natural language inputs, supported by advanced semantic parsing.
+- **Automatic SQL Generation**: Translate natural language queries into SQL commands; preview and edit commands as needed.
+- **Data Visualization**: Generate interactive visualizations automatically, enhancing data understanding and analysis.
+- **Flexible Integrations**: Connect with multiple data sources, including relational databases and CSV files.
+- **Human-in-the-Loop**: Provides options for manual SQL editing and query refinement, ensuring accuracy and control.
+- **Plug-and-Play**: Simple setup with no need for additional training data; ready for diverse data exploration scenarios.
 
-## System Requirements
+## Installation
 
-- **Backend**: Node.js (for database connectivity and API handling)
-- **Databases Supported**: Major relational databases, along with CSV files (handled by SQLite)
-- **APIs**: Codex API for SQL generation, GPT-3 for summarization, Vega for visualizations
+1. **Clone the Repository**:
+    ```bash
+    git clone https://github.com/navidata/navidata.git
+    ```
+2. **Install Dependencies**:
+    ```bash
+    cd navidata
+    pip install -r requirements.txt
+    ```
+3. **Environment Configuration**:
+   Configure the API keys for LLMs (e.g., OpenAI Codex) and database credentials in `.env` or directly in `config.py`.
 
-## Getting Started
-
-### Installation
-
-1. **Clone the Repository**
+4. **Run the Application**:
    ```bash
-   git clone https://github.com/mirror-data/mirror.git
-   ```
-2. **Install Dependencies**
-   ```bash
-   cd mirror
-   npm install
-   ```
-3. **Configure Environment Variables**
-   Update your `.env` file with the API keys required for OpenAI Codex and GPT-3.
-
-4. **Run the Server**
-   ```bash
-   npm start
+   python app.py
    ```
 
-### Usage
+## Usage
 
-1. **Initialize Database Connection**: Connect to your database or CSV file through the Mirror interface.
-2. **Input Queries**: Type in your query in natural language.
-3. **SQL Generation & Editing**: Mirror will auto-generate SQL based on your query, with options for manual editing.
-4. **Visualization**: Automatically generated visuals can be customized and exported for reporting.
+1. Launch the application and connect to your preferred data source.
+2. Use the natural language interface to input queries. Navidata generates SQL commands automatically.
+3. Edit and review the SQL commands if necessary.
+4. View data summarizations and visualizations generated in response to your query.
 
-## Components and Workflow
+## System Components
 
-1. **Data Query**: Mirror constructs prompts with metadata and queries, which Codex then converts to SQL. Users may preview and edit these SQL commands as needed.
-2. **Summarization**: Mirror uses GPT-3 to generate natural language summaries, helping users quickly understand data results.
-3. **Visualization**: Automatically generates visuals (e.g., bar charts, line graphs) using Vega to make data insights more accessible.
+- **Data Query Module**: Translates natural language queries into SQL, allowing users to fine-tune the queries.
+- **Summarization and Visualization Module**: Summarizes data in natural language and generates visualizations using Vega for easy interpretation.
+- **Pre-trained Models**: Utilizes large language models (e.g., OpenAI Codex, GPT-3) for SQL generation, data summarization, and visualization code creation.
 
-## Example Use Cases
+## Use Cases
 
-1. **Sports Data Question-Answering**: Mirror can connect to real-time sports databases, enabling fans to ask questions and receive current statistics and updates.
-2. **OSS Insight**: Integration with open-source event analysis to monitor software development trends.
+### 1. Business Intelligence
+Navidata can connect to live business databases, providing rapid insights and visual summaries for non-technical professionals.
 
-## Contributing
+### 2. Sports Analytics
+Integrate real-time sports data for up-to-date insights on player performance, team rankings, and more.
 
-We welcome contributions! If you're interested in improving Mirror, please refer to the `CONTRIBUTING.md` for guidelines.
+### 3. Open-Source Event Analysis
+With OSS Insight Data Explorer, Navidata can analyze data from open-source repositories, providing summaries and trends over time.
 
-## License
+## References
 
-This project is licensed under the MIT License. See `LICENSE` for more details.
-
-For more information, visit our [GitHub repository](https://github.com/mirror-data/mirror).
+For further details, please refer to the original paper:  
+Xu, C., McAuley, J., & Wang, P. (2023). *Mirror: A Natural Language Interface for Data Querying, Summarization, and Visualization*. In Companion Proceedings of the ACM Web Conference 2023. [https://doi.org/10.1145/3543873.3587309](https://doi.org/10.1145/3543873.3587309)
